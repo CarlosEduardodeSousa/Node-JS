@@ -23,5 +23,5 @@ app.get('/rotadeTeste', function(req, res){
 })
 
 app.listen(port, function(req, res){
-    console.log(`Servidor rodando na porta http://localhost:8081`)
+    console.log(`Servidor rodando na porta http://localhost:${port}`)
 })
