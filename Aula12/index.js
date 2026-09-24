@@ -48,5 +48,5 @@ app.get('/deletar/:id', function(req, res){
 })
 
 app.listen(port, function(){
-    console.log(`Servidor rodando na porta http:/localhost:${port}`)
+    console.log(`Servidor rodando na porta http://localhost:${port}`)
 })
