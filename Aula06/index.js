@@ -22,5 +22,5 @@ app.get('/ola/:nome/:cargo/:cor', function(req, res){
 
 
 app.listen(port, function(req, res){
-    console.log(`Servidor rodando na porta http:/localhost:${port}`)
+    console.log(`Servidor rodando na porta http://localhost:${port}`)
 })
