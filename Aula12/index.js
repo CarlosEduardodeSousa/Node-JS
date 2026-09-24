@@ -37,6 +37,16 @@ app.post('/add', function(req, res){
     })
 })
 
+app.get('/deletar/:id', function(req, res){
+    Post.destroy({where: {'id': req.params.id}}).then(function(){
+        res.send(`Postagem deletada com sucesso!`)
+    }).catch(function(erro){
+        res.send(`Essa postagem não existe!`)
+    })
+
+    //Post.destroy() => serve para deletar os dados no site e no banco de dados
+})
+
 app.listen(port, function(){
     console.log(`Servidor rodando na porta http:/localhost:${port}`)
 })
