@@ -3,7 +3,22 @@ const app = express()
 const port = 8081
 const admin = require('./routes/admin')
 const path = require('path')
+const session = require('express-session')
+const flash = require('connect-flash')
 //Configs
+    //Session + Flash
+        app.use(session({
+            secret: 'cursodenode',
+            resave: true,
+            saveUninitialized: true
+        }))
+        app.use(flash())
+    //Middleware
+        app.use((req, res, next) => {
+            res.locals.success_msg = req.flash('success_msg')
+            res.locals.error_msg = req.flash('error_msg')
+            next()
+        })
     // Handlebars
         const {engine} = require('express-handlebars')
         app.engine('handlebars', engine({defaultLayout: 'main'}))
@@ -22,11 +37,6 @@ const path = require('path')
         })
     // Public (Arquivos HTML, CSS E JS)
         app.use(express.static(path.join(__dirname, 'public')))
-    //Middleware (Intermediador entre cliente e servidor)
-        app.use((req, res, next) => {
-            console.log(`Eu sou um middleware!`)
-            next() //Next() => obrigatorio no middleware
-        })
 //Rotas
     app.use('/admin', admin)  //Prefixo, variavel
 //Outros
