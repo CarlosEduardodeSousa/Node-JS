@@ -28,7 +28,7 @@ router.post('/categorias/nova', (req, res) => {
     if(!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null){
         erros.push({text: 'Nome inválido'})
     }
-
+  
     if (!req.body.slug || typeof req.body.slug == undefined || req.body.slug == null){
         erros.push({text: 'Slug Inválido!'})
     }
