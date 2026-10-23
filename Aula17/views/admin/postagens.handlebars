@@ -1,0 +1,14 @@
+<h1>Lista de Postagens</h1>
+<a href="/admin/postagens/add"><button class="btn btn-success">Adicionar Postagens</button></a> 
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{titulo}}</h4>
+            <p>Slug: {{slug}}</p>
+            <small>Descrição: {{descricao}}</small> <br>
+            <small>Conteúdo: {{conteudo}}</small> <br>
+            <small>Categoria: {{categoria.nome}}</small> <br>
+            <small>Data: {{data}}</small>
+        </div>
+    </div>
+{{/each}}
