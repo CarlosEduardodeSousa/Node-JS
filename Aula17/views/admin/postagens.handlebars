@@ -8,7 +8,9 @@
             <small>Descrição: {{descricao}}</small> <br>
             <small>Conteúdo: {{conteudo}}</small> <br>
             <small>Categoria: {{categoria.nome}}</small> <br>
-            <small>Data: {{data}}</small>
+            <small>Data: {{data}}</small> <br>
+            <a href="/admin/postagens/edit/{{_id}}"><button class="btn btn-success mt-2">Editar Postagem</button></a>
+            <a href="/admin/postagens/deletar/{{_id}}"><button class="btn btn-danger mt-2">Deletar Postagem</button></a>
         </div>
     </div>
 {{/each}}
