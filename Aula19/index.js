@@ -10,6 +10,7 @@ require('./models/Postagem')
 const Postagem = mongoose.model('postagens')
 require('./models/Categoria')
 const Categoria = mongoose.model('categorias')
+const usuarios = require('./routes/usuario')
 //Configs
     //Session + Flash
         app.use(session({
@@ -99,7 +100,7 @@ app.get('/404', (req, res) => {
 })
 
 app.use('/admin', admin)  //Prefixo, variavel
-
+app.use('/usuarios', usuarios)
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta http://localhost:${port}`)
